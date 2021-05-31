@@ -18,6 +18,12 @@ app.use(express.json());
 app.use("/plant", plantRouter);
 app.use("/user", userRouter);
 
+// passport config
+
+const passport = require("passport");
+const ConnectPassport = require("./config/passport")(passport);
+ConnectPassport();
+
 app.listen(5000, () => {
   console.log("Backend is running on port 5000");
 });
